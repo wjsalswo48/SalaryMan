@@ -21,7 +21,8 @@ public class Input {
 			System.out.print("야근시간 : "); int night = this.sc.nextInt();
 			System.out.print("가족수 : "); int family = this.sc.nextInt();
 			this.sc.nextLine();
-			this.array[count++] = new Employee(empno, name, base, night, family);
+			this.array[count] = new Employee(empno, name, base, night, family);
+			count++;
 			System.out.print("Againt(y/n) ? : ");
 			y_n = this.sc.next();
 			this.sc.nextLine();

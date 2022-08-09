@@ -17,6 +17,22 @@ public class Calc {
 			String codeStr = String.valueOf(code);
 			int codeInt = Integer.parseInt(codeStr);
 			int hopay = this.getHopay(codeInt);
+			emp.setHo_pay(hopay);
+			int nightpay = this.getNightpay(emp.getNight());
+			emp.setNight(nightpay);
+			int base = emp.getBase();
+			int basePay = this.getBase(base);
+			emp.setBase(basePay);
+			int family = emp.getFamily();
+			int famPay = 7000*family;
+			emp.setFam_pay(famPay);
+			
+			int total = hopay + basePay + nightpay + famPay;
+			emp.setTotal(total);
+			
+			int tax = (int)(hopay*0.1);
+			int salary = total - tax;
+			emp.setSalary(salary);
 		}
 	}
 
@@ -25,7 +41,7 @@ public class Calc {
 		return hopays[code-1];
 	}
 	
-	private int gotBase(int code) {
+	private int getBase(int code) {
 		int [] bases = {15000, 25000, 35000, 45000};
 		return bases[code-1];
 	}

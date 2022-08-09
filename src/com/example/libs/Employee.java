@@ -127,7 +127,7 @@ public class Employee {
 	@Override
 	public String toString() {
 		return String.format(
-				"Employee [%-5s%5s%5s%5s%5d%10d%7d%7d%10d%10d]",
+				"%-5s%5s%5s%7s%7d%7d%7d%10d%10d]",
 				empnum, name, dname, base, ho_pay, fam_pay, night_pay, total, salary);
 	}
 	
